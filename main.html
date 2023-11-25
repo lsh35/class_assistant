@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업도우미</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .service {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>수업도우미</h1>
+        <h3>제작자 : 20704 권강민, 20720 박형준, 20727 이선호</h3>
+    </header>
+    <section>
+        <div class="service" id="seatService">
+            <h2><a href="https://lsh35.github.io/class_assistant/seat.html">학급 자리 배치</a></h2>
+            <p>학급의 자리 배치를 도와주는 프로그램입니다.</p>
+        </div>
+        <div class="service" id="presentationService">
+            <h2><a href="presentation.html">발표순서 뽑기</a></h2>
+            <p>발표 순서를 무작위로 생성해주는 프로그램입니다.</p>
+        </div>
+        <div class="service" id="qrService">
+            <h2><a href="qr.html">QR 코드 변환기</a></h2>
+            <p>텍스트를 QR 코드로 변환해주는 프로그램입니다.</p>
+        </div>
+    </section>
+</body>
+</html>
