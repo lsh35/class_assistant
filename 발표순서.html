@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발표 순서 뽑기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #shuffleButton {
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #numberOfPeopleInput {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>발표 순서 뽑기</h1>
+    <h3>제작자 : 20720 박형준</h3>
+    <label for="numberOfPeopleInput">발표자 수: </label>
+    <input type="number" id="numberOfPeopleInput" min="1" value="10"> 
+    <button id="shuffleButton" onclick="shuffleAndDisplay()">순서 뽑기</button>
+
+    <div id="result"></div>
+
+    <script>
+        function shuffleAndDisplay() {
+            var numberOfPeople = document.getElementById('numberOfPeopleInput').value;
+
+            
+            if (isNaN(numberOfPeople) || numberOfPeople <= 0) {
+                alert('발표자 수를 1 이상의 정수로 입력해주세요.');
+                return;
+            }
+
+            numberOfPeople = parseInt(numberOfPeople);
+
+            var order = Array.from({ length: numberOfPeople }, (_, index) => index + 1);
+
+            for (let i = order.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [order[i], order[j]] = [order[j], order[i]];
+            }
+
+            displayResult(order);
+        }
+
+        function displayResult(order) {
+            var resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = '';
+
+            order.forEach(number => {
+                var text = document.createElement('p');
+                text.textContent = '번호 ' + number;
+                resultContainer.appendChild(text);
+            });
+        }
+    </script>
+</body>
+</html>
